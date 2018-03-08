@@ -8,22 +8,39 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.hiof.tmwasbra.laerejavafxml.controller.FilmOversiktController">
-   <children>
-      <Label fx:id="viewTittel" layoutX="264.0" layoutY="14.0" text="Film Tittel">
-         <font>
-            <Font size="32.0" />
-         </font>
-      </Label>
-      <TextArea fx:id="viewBeskrivelse" layoutX="366.0" layoutY="63.0" prefHeight="85.0" prefWidth="200.0" />
-      <Label layoutX="255.0" layoutY="95.0" text="Beskrivelse" />
-      <TextArea fx:id="viewUtgivelsesdato" layoutX="366.0" layoutY="190.0" prefHeight="17.0" prefWidth="200.0" />
-      <Button layoutX="386.0" layoutY="361.0" mnemonicParsing="false" text="Slett" />
-      <Button layoutX="255.0" layoutY="361.0" mnemonicParsing="false" text="Ny" />
-      <Button layoutX="304.0" layoutY="361.0" mnemonicParsing="false" text="Rediger" />
-      <TextField fx:id="viewSpilleTid" layoutX="366.0" layoutY="264.0" prefHeight="25.0" prefWidth="200.0" />
-      <Label layoutX="255.0" layoutY="258.0" text="Spille Tid" />
-      <Label layoutX="255.0" layoutY="203.0" text="Utgivelsesdato" />
-      <ListView fx:id="viewList" prefHeight="400.0" prefWidth="244.0" />
-   </children>
+<AnchorPane prefHeight="421.0" prefWidth="654.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.hiof.tmwasbra.laerejavafxml.controller.FilmOversiktController">
+    <children>
+        <TextField fx:id="viewUtgivelsesdato" editable="false" layoutX="454.0" layoutY="163.0" prefHeight="53.0" prefWidth="186.0" />
+        <Label layoutX="355.0" layoutY="294.0" prefHeight="31.0" prefWidth="85.0" text="Beskrivelse:" underline="true">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <Label layoutX="353.0" layoutY="170.0" prefHeight="37.0" prefWidth="102.0" text="Utgivelsedato:" underline="true">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <Label layoutX="354.0" layoutY="71.0" prefHeight="21.0" prefWidth="94.0" text="Spilletid:" underline="true">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <TextField fx:id="viewSpilletid" editable="false" layoutX="455.0" layoutY="65.0" prefHeight="37.0" prefWidth="186.0" />
+        <TextArea fx:id="viewBeskrivelse" editable="false" layoutX="459.0" layoutY="231.0" prefHeight="133.0" prefWidth="186.0" />
+        <TextField fx:id="viewTittel" layoutX="-2.0" layoutY="22.0" prefHeight="37.0" prefWidth="345.0">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </TextField>
+        <Button layoutX="359.0" layoutY="383.0" mnemonicParsing="false" onAction="#lagNyFilm" text="Ny" AnchorPane.bottomAnchor="13.0" />
+        <Button layoutX="407.0" layoutY="377.0" mnemonicParsing="false" text="Rediger" AnchorPane.bottomAnchor="13.0" />
+        <Button layoutX="489.0" layoutY="377.0" mnemonicParsing="false" onAction="#viewSlettKnapp" text="Slett" AnchorPane.bottomAnchor="13.0" />
+        <ListView fx:id="viewalleFilmer" layoutX="-3.0" layoutY="62.0" prefHeight="360.0" prefWidth="345.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-3.0" AnchorPane.rightAnchor="312.0" AnchorPane.topAnchor="62.0" />
+        <Label layoutX="3.0" layoutY="-2.0" prefHeight="21.0" prefWidth="50.0" text="Tittel:">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Label>
+    </children>
 </AnchorPane>
