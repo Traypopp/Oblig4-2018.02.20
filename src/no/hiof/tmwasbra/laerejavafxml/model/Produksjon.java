@@ -1,4 +1,4 @@
-package no.hiof.tmwasbra.laerejavafxml;
+package no.hiof.tmwasbra.laerejavafxml.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

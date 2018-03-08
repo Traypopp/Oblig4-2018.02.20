@@ -1,4 +1,6 @@
-package no.hiof.tmwasbra.laerejavafxml;
+package no.hiof.tmwasbra.laerejavafxml.model;
+
+import no.hiof.tmwasbra.laerejavafxml.model.Person;
 
 public class Rolle {
     private String karakterFornavn, karakterEtternavn;

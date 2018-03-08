@@ -1,18 +1,21 @@
-package no.hiof.tmwasbra.laerejavafxml;
+package no.hiof.tmwasbra.laerejavafxml.model;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class TvSerie {
+public class TvSerie implements Comparable<TvSerie>{
     private String tittel;
     private String beskrivelse;
     private LocalDate utgivelsesdato;
     private ArrayList<Episode> episodeListe = new ArrayList<>();
     private int gjennomSnittligSpilletid;
     private int antallSesonger;
-    private static ArrayList<TvSerie> tvSerieListe = new ArrayList<>();
+    private static ObservableList<TvSerie> tvSerieListe = FXCollections.observableArrayList();
 
     public TvSerie(String tittel, String beskrivelse, LocalDate utgivelsesdato) {
         this.tittel = tittel;
@@ -21,6 +24,7 @@ public class TvSerie {
 
         tvSerieListe.add(this);
     }
+
 
     public ArrayList<Rolle> hentCast() {
         // Lager en ny rolle som vi skal fylle opp med alle roller som spilles i episodene
@@ -58,8 +62,7 @@ public class TvSerie {
                     Integer antallSpilt = returnCast.get(enRolle);
                     // Vi erstatter så antalletspiltverdien med den gamle verdien + 1
                     returnCast.replace(enRolle, ++antallSpilt);
-                }
-                else {
+                } else {
                     // Hvis vi ikke har den fra før, legg den til og sett antallet episoder spilt til 1
                     returnCast.put(enRolle, 1);
                 }
@@ -87,17 +90,16 @@ public class TvSerie {
 
     public void leggTilEpisode(Episode episode) {
         // Undersøker om episoden sitt sesongNummer er høyere enn antallSesonger pluss 1
-        if (antallSesonger+1 < episode.getSesongNummer()) {
-            System.out.println("FEIL: Det er ikke mulig å legge til episoder for sesong " + episode.getSesongNummer() + ", den er " + (episode.getSesongNummer()  - antallSesonger) + " høyere enn antallet sesonger");
-        }
-        else {
+        if (antallSesonger + 1 < episode.getSesongNummer()) {
+            System.out.println("FEIL: Det er ikke mulig å legge til episoder for sesong " + episode.getSesongNummer() + ", den er " + (episode.getSesongNummer() - antallSesonger) + " høyere enn antallet sesonger");
+        } else {
             // Legger til episode til listen
             episodeListe.add(episode);
             // Oppdaterer gjennomsnittligspilletid
             oppdaterGjennomsnittligSpilletid();
 
             // Sjekker om episoden sitt sesongNummer er akkurat 1 høyere enn antallSesonger, i så fall, oppdater den
-            if (antallSesonger+1 == episode.getSesongNummer())
+            if (antallSesonger + 1 == episode.getSesongNummer())
                 antallSesonger++;
         }
 
@@ -133,11 +135,11 @@ public class TvSerie {
         gjennomSnittligSpilletid = totalSpilletid / episodeListe.size();
     }
 
-    public static ArrayList<TvSerie> getTvSerieListe() {
+    public static ObservableList<TvSerie> getTvSerieListe() {
         return tvSerieListe;
     }
 
-    public static void setTvSerieListe(ArrayList<TvSerie> tvSerieListe) {
+    public static void setTvSerieListe(ObservableList<TvSerie> tvSerieListe) {
         TvSerie.tvSerieListe = tvSerieListe;
     }
 
@@ -183,5 +185,9 @@ public class TvSerie {
     @Override
     public String toString() {
         return tittel + " - " + utgivelsesdato.getYear();
+    }
+
+    @Override public int compareTo(TvSerie andreTvSerie) {
+        return getTittel().compareTo( andreTvSerie.getTittel());
     }
 }
