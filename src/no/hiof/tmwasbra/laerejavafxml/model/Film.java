@@ -11,8 +11,8 @@ public class Film extends Produksjon implements Comparable<Film> {
     private static ObservableList<Film> filmListe = FXCollections.observableArrayList();
 
 
-    public Film(String tittel, String beskrivelse, int spilletid, LocalDate utgivelsesdato, Person regisor) {
-        super(tittel, beskrivelse, spilletid, utgivelsesdato, regisor);
+    public Film(String tittel, String beskrivelse, int spilletid, LocalDate utgivelsesdato) {
+        super(tittel, beskrivelse, spilletid, utgivelsesdato);
 
         filmListe.add(this);
     }

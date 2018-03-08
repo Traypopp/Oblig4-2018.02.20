@@ -15,15 +15,15 @@
             <Font size="32.0" />
          </font>
       </Label>
-      <ListView fx:id="viewList" prefHeight="400.0" prefWidth="251.0" />
-      <TextArea fx:id="viewBeskrivelse" layoutX="339.0" layoutY="61.0" prefHeight="85.0" prefWidth="200.0" />
+      <TextArea fx:id="viewBeskrivelse" layoutX="366.0" layoutY="63.0" prefHeight="85.0" prefWidth="200.0" />
       <Label layoutX="255.0" layoutY="95.0" text="Beskrivelse" />
-      <TextArea fx:id="viewUtgivelsesdato" layoutX="339.0" layoutY="192.0" prefHeight="17.0" prefWidth="200.0" />
-      <Button layoutX="358.0" layoutY="361.0" mnemonicParsing="false" text="Slett" />
+      <TextArea fx:id="viewUtgivelsesdato" layoutX="366.0" layoutY="190.0" prefHeight="17.0" prefWidth="200.0" />
+      <Button layoutX="386.0" layoutY="361.0" mnemonicParsing="false" text="Slett" />
       <Button layoutX="255.0" layoutY="361.0" mnemonicParsing="false" text="Ny" />
-      <Button layoutX="294.0" layoutY="361.0" mnemonicParsing="false" text="Rediger" />
-      <TextField fx:id="viewSpilleTid" layoutX="339.0" layoutY="254.0" prefHeight="25.0" prefWidth="200.0" />
+      <Button layoutX="304.0" layoutY="361.0" mnemonicParsing="false" text="Rediger" />
+      <TextField fx:id="viewSpilleTid" layoutX="366.0" layoutY="264.0" prefHeight="25.0" prefWidth="200.0" />
       <Label layoutX="255.0" layoutY="258.0" text="Spille Tid" />
       <Label layoutX="255.0" layoutY="203.0" text="Utgivelsesdato" />
+      <ListView fx:id="viewList" prefHeight="400.0" prefWidth="244.0" />
    </children>
 </AnchorPane>

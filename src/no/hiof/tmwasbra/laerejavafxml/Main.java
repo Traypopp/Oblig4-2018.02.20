@@ -11,10 +11,11 @@ import java.util.Map;
 public class Main {
 
     public static void main(String[] args) {
-        lagOgSkrivUtInformasjonOmEtParFilmer();
+        //lagOgSkrivUtInformasjonOmEtParFilmer();
         lagOgSkrivUtInformasjonOmDigimon();
         lagOgSkrivUtInformasjonOmDaysOfOurLives();
     }
+
 
 
     //Film
@@ -25,11 +26,17 @@ public class Main {
         Person paulKing = new Person("Paul", "King");
 
         // Lager og instansierer objektet jermaRumbleLiveAction av typen Film
-        Film jermaRumbleLiveAction = new Film("The Jerma Rumble - Live Action!", "It's been a long time coming, but here is the latest from the Jerma Wrestling Federation.",36, LocalDate.of(2016, 8, 29), jeremyHarrington);
+        Film jermaRumbleLiveAction = new Film("The Jerma Rumble - Live Action!", "It's been a long time coming, but here is the latest from the Jerma Wrestling Federation.",36, LocalDate.of(2016, 8, 29));
         // Lager og instansierer objektet ratMovie av typen Film
-        Film ratMovie = new Film("Rat Movie: Mystery of the Mayan Treasure", "Straight to the Bargain Bin", 6, LocalDate.of(2014, 11, 6), jeremyHarrington);
+        Film ratMovie = new Film("Rat Movie: Mystery of the Mayan Treasure", "Straight to the Bargain Bin", 6, LocalDate.of(2014, 11, 6));
         // Lager oginstansierer objektet paddington av typen film
-        Film paddington = new Film("Paddington", "A Young Peruvian bear Travels to London in search of a home", 95, LocalDate.of(2014, 11, 23), paulKing);
+        Film paddington = new Film("Paddington", "A Young Peruvian bear Travels to London in search of a home", 95, LocalDate.of(2014, 11, 23));
+
+
+        //Legg til resisjør
+        jermaRumbleLiveAction.setRegisor(jeremyHarrington);
+        ratMovie.setRegisor(jeremyHarrington);
+        paddington.setRegisor(paulKing);
 
         // Lager og instansierer objekteter av typen Rolle
         Rolle theWineGuy = new Rolle("The Wine", "Guy", new Person("Jay", "Buffet"));
@@ -57,7 +64,7 @@ public class Main {
         Person hiroyukiKakudo = new Person("Hiroyuki", "Kakudo");
 
         // Lager og instansierer objektet digimon av typen TvSerie
-        TvSerie digimon = new TvSerie("Digimon", "When a young boy disappears, his mother, a police chief, and his friends must confront terrifying forces in order to get him back.", LocalDate.of(2016, 7,15));
+        TvSerie digimon = new TvSerie("Digimon", "A team of children known as the DigiDestined, go out on adventures with their very own Digimons in the DigitalWorld", LocalDate.of(1999, 8,14));
 
         // Lager og instansierer noen objekter av typen Episode
         Episode episode1 = new Episode(1, 1, "And So It Begins...", "The DigiDestined are sent to the Digital World", 50, LocalDate.of(1999, 8, 14), hiroyukiKakudo);

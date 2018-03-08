@@ -18,6 +18,13 @@ public abstract class Produksjon {
         this.regisor = regisor;
     }
 
+    public Produksjon(String tittel, String beskrivelse, int spilletid, LocalDate utgivelsesdato) {
+        this.tittel = tittel;
+        this.beskrivelse = beskrivelse;
+        this.spilletid = spilletid;
+        this.utgivelsesdato = utgivelsesdato;
+    }
+
     public void leggTilEnRolle(Rolle enRolle) {
         rolleListe.add(enRolle);
     }
